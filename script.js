@@ -12,5 +12,11 @@ switch(getComputerChoice){
         getComputerChoice = "paper";
         break;
     case 3:
-        getComputerChoice = "scissors";
+        getComputerChoice = "scissor";
 }
+
+// ask user for their choice
+let getHumanChoice = prompt(`Rock, Paper, Scissor? make your choice: `, '');
+getHumanChoice = getHumanChoice.toLowerCase();
+
+
