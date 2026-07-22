@@ -50,11 +50,12 @@ function playRound(getComputerChoice, getHumanChoice) {
     else if (getHumanChoice === getComputerChoice) {
         console.log("Tie! you both get +1 score");
         humanScore++;
-        comuterScore++;
+        computerScore++;
     }
 
     else {
         console.log(`You Lose! ${getComputerChoice} beats ${getHumanChoice}`);
+        computerScore++;
     }
 }
 
@@ -80,6 +81,6 @@ else if (humanScore < computerScore) {
 }
 
 else {
-    console.log(`The game is a your score is: ${humanScore} and Computer's score is ${computerScore}`);
+    console.log(`The game is tie a your score is: ${humanScore} and Computer's score is ${computerScore}`);
 }
 
