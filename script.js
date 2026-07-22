@@ -33,28 +33,28 @@ let computerScore = 0;
 // logic to decide the winner of round
 function playRound(getComputerChoice, getHumanChoice) {
     if (getHumanChoice === "rock" && getComputerChoice === "scissor") {
-        console.log("You Win! rock beats scissor");
+        alert("You Win! rock beats scissor");
         humanScore++;
     }
 
     else if (getHumanChoice === "paper" && getComputerChoice === "rock") {
-        console.log("You Win! paper beats rock");
+        alert("You Win! paper beats rock");
         humanScore++;
     }
 
     else if (getHumanChoice === "scissor" && getComputerChoice === "paper") {
-        console.log("You Win! scissor beats paper");
+        alert("You Win! scissor beats paper");
         humanScore++
     }
 
     else if (getHumanChoice === getComputerChoice) {
-        console.log("Tie! you both get +1 score");
+        alert("Tie! you both get +1 score");
         humanScore++;
         computerScore++;
     }
 
     else {
-        console.log(`You Lose! ${getComputerChoice} beats ${getHumanChoice}`);
+        alert(`You Lose! ${getComputerChoice} beats ${getHumanChoice}`);
         computerScore++;
     }
 }
@@ -73,14 +73,14 @@ playGame();
 
 // decides winner based on overall score
 if (humanScore > computerScore) {
-    console.log(`You won the game your score is: ${humanScore} and Computer's score is ${computerScore}`);
+    alert(`You won the game your score is: ${humanScore} and Computer's score is ${computerScore}`);
 }
 
 else if (humanScore < computerScore) {
-    console.log(`You loose the game your score is: ${humanScore} and Computer's score is ${computerScore}`);
+    alert(`You loose the game your score is: ${humanScore} and Computer's score is ${computerScore}`);
 }
 
 else {
-    console.log(`The game is tie a your score is: ${humanScore} and Computer's score is ${computerScore}`);
+    alert(`The game is tie a your score is: ${humanScore} and Computer's score is ${computerScalert}`);
 }
 
