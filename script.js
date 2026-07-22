@@ -19,4 +19,36 @@ switch(getComputerChoice){
 let getHumanChoice = prompt(`Rock, Paper, Scissor? make your choice: `, '');
 getHumanChoice = getHumanChoice.toLowerCase();
 
+// scores of computer and player
+let humanScore = 0;
+let comuterScore = 0;
+
+// logic to decide the winner of round
+function playRound(getComputerChoice, getHumanChoice){
+    if (getHumanChoice==="rock" && getComputerChoice==="scissor"){
+        console.log("You Win! rock beats scissor");
+        humanScore++;
+    }
+
+    else if(getHumanChoice==="paper" && getComputerChoice==="rock"){
+        console.log("You Win! paper beats rock");
+        humanScore++;
+    }
+
+    else if(getHumanChoice==="scissor" && getComputerChoice==="paper")
+    {
+        console.log("You Win! scissor beats paper");
+        humanScore++
+    }
+
+    else if(getHumanChoice===getComputerChoice){
+        console.log("Tie! you both get +1 score");
+        humanScore++;
+        comuterScore++;
+    }
+
+    else {
+        console.log(`You Lose! ${getComputerChoice} beats ${getHumanChoice}`);
+    }
+}
 
