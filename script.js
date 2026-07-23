@@ -29,32 +29,27 @@ function clear ()
     computerScore = 0; 
     result.textContent = ""; 
     score.textContent = "";
-    message.textContent = "";
 }
 
 function winner() {
     if (humanScore > computerScore) {
-        message.textContent = `You won the game by ${humanScore} / ${computerScore}`;
+        alert(`You won the game, human score: ${humanScore} computer score: ${computerScore}`);
     }
 
     else if (humanScore < computerScore) {
-        message.textContent = `You lost the game by ${humanScore} / ${computerScore}`;
+        alert(`You lost the game, human score: ${humanScore} computer score: ${computerScore}`);
     }
 
     else {
-        message.textContent = `The game is a tie by ${humanScore} / ${computerScore}`;
+        alert(`The game is a tie human score: ${humanScore} computer score: ${computerScore}`);
     }
 
+    clear();
 }
 
 // logic to decide the winner of round
 function playRound(getHumanChoice) {
     let getComputerChoice = ComputerChoice();
-
-    if (humanScore >= 5 || computerScore >= 5)
-    {
-        clear();
-    }
 
     if (getHumanChoice === "rock" && getComputerChoice === "scissor") {
         result.textContent = "You Win! rock beats scissor";
