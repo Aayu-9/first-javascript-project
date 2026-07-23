@@ -23,49 +23,82 @@ function ComputerChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+function clear ()
+{
+    humanScore = 0; 
+    computerScore = 0; 
+    result.textContent = ""; 
+    score.textContent = "";
+    message.textContent = "";
+}
+
+function winner() {
+    if (humanScore > computerScore) {
+        message.textContent = `You won the game by ${humanScore} / ${computerScore}`;
+    }
+
+    else if (humanScore < computerScore) {
+        message.textContent = `You lost the game by ${humanScore} / ${computerScore}`;
+    }
+
+    else {
+        message.textContent = `The game is a tie by ${humanScore} / ${computerScore}`;
+    }
+
+}
+
 // logic to decide the winner of round
 function playRound(getHumanChoice) {
     let getComputerChoice = ComputerChoice();
 
+    if (humanScore >= 5 || computerScore >= 5)
+    {
+        clear();
+    }
+
     if (getHumanChoice === "rock" && getComputerChoice === "scissor") {
-        result.append("You Win! rock beats scissor");
+        result.textContent = "You Win! rock beats scissor";
         humanScore++;
+        score.textContent = `your score is ${humanScore}, computer score is: ${computerScore}`;
+        if (humanScore >= 5 || computerScore >= 5) { 
+            winner(); };
     }
 
     else if (getHumanChoice === "paper" && getComputerChoice === "rock") {
-        result.append("You Win! paper beats rock");
+        result.textContent = "You Win! paper beats rock";
         humanScore++;
+        score.textContent = `your score is ${humanScore}, computer score is: ${computerScore}`;
+        if (humanScore === 5 || computerScore === 5) { 
+            winner(); };
     }
 
     else if (getHumanChoice === "scissor" && getComputerChoice === "paper") {
-        result.append("You Win! scissor beats paper");
+        result.textContent = "You Win! scissor beats paper";
         humanScore++;
+        score.textContent = `your score is ${humanScore}, computer score is: ${computerScore}`;
+        if (humanScore === 5 || computerScore === 5) { 
+            winner(); };
     }
 
     else if (getHumanChoice === getComputerChoice) {
-        result.append("Tie! you both get +1 score");
+        result.textContent = "Tie! you both get +1 score";
         humanScore++;
         computerScore++;
+        score.textContent = `your score is ${humanScore}, computer score is: ${computerScore}`;
+        if (humanScore === 5 || computerScore === 5) { 
+            winner(); };
     }
 
     else {
-        result.append(`You Lose! ${getComputerChoice} beats ${getHumanChoice}`);
+        result.textContent = `You Lose! ${getComputerChoice} beats ${getHumanChoice}`;
         computerScore++;
+        score.textContent = `your score is ${humanScore}, computer score is: ${computerScore}`;
+        if (humanScore === 5 || computerScore === 5) { 
+            winner(); };
     }
+
 }
 
-// decides winner based on overall score
-// if (humanScore > computerScore) {
-//     alert(`You won the game your score is: ${humanScore} and Computer's score is ${computerScore}`);
-// }
-
-// else if (humanScore < computerScore) {
-//     alert(`You loose the game your score is: ${humanScore} and Computer's score is ${computerScore}`);
-// }
-
-// else {
-//     alert(`The game is tie a your score is: ${humanScore} and Computer's score is ${computerScore}`);
-// }
 
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
@@ -76,4 +109,6 @@ paper.addEventListener("click", () => playRound("paper"));
 scissor.addEventListener("click", () => playRound("scissor"));
 
 const result = document.querySelector(".result");
+const score = document.querySelector(".score");
+const message = document.querySelector(".message");
 
