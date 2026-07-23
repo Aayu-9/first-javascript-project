@@ -64,7 +64,7 @@ function playRound(getHumanChoice) {
     if (getHumanChoice === "rock" && getComputerChoice === "scissor") {
         result.textContent = "You Win! rock beats scissor";
         humanScore++;
-        score.textContent = `your score is ${humanScore}, computer score is: ${computerScore}`;
+        score.textContent = `your score: ${humanScore} | computer score: ${computerScore}`;
         if (humanScore >= 5 || computerScore >= 5) { 
             winner(); };
     }
@@ -72,7 +72,7 @@ function playRound(getHumanChoice) {
     else if (getHumanChoice === "paper" && getComputerChoice === "rock") {
         result.textContent = "You Win! paper beats rock";
         humanScore++;
-        score.textContent = `your score is ${humanScore}, computer score is: ${computerScore}`;
+        score.textContent = `your score: ${humanScore} | computer score: ${computerScore}`;
         if (humanScore === 5 || computerScore === 5) { 
             winner(); };
     }
@@ -80,7 +80,7 @@ function playRound(getHumanChoice) {
     else if (getHumanChoice === "scissor" && getComputerChoice === "paper") {
         result.textContent = "You Win! scissor beats paper";
         humanScore++;
-        score.textContent = `your score is ${humanScore}, computer score is: ${computerScore}`;
+        score.textContent = `your score: ${humanScore} | computer score: ${computerScore}`;
         if (humanScore === 5 || computerScore === 5) { 
             winner(); };
     }
@@ -89,7 +89,7 @@ function playRound(getHumanChoice) {
         result.textContent = "Tie! you both get +1 score";
         humanScore++;
         computerScore++;
-        score.textContent = `your score is ${humanScore}, computer score is: ${computerScore}`;
+        score.textContent = `your score: ${humanScore} | computer score: ${computerScore}`;
         if (humanScore === 5 || computerScore === 5) { 
             winner(); };
     }
@@ -97,7 +97,7 @@ function playRound(getHumanChoice) {
     else {
         result.textContent = `You Lose! ${getComputerChoice} beats ${getHumanChoice}`;
         computerScore++;
-        score.textContent = `your score is ${humanScore}, computer score is: ${computerScore}`;
+        score.textContent = `your score: ${humanScore} | computer score: ${computerScore}`;
         if (humanScore === 5 || computerScore === 5) { 
             winner(); };
     }
