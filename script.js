@@ -1,4 +1,14 @@
-// generating a random choice between 1 and 3
+
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissor = document.querySelector("#scissor");
+
+rock.addEventListener("click", () => playRound("rock"));
+paper.addEventListener("click", () => playRound("paper"));
+scissor.addEventListener("click", () => playRound("scissor"));
+
+const result = document.querySelector(".result");
+const score = document.querySelector(".score");
 
 function ComputerChoice() {
     let ComputerChoice = Math.floor(Math.random() * 3) + 1;
@@ -94,16 +104,4 @@ function playRound(getHumanChoice) {
 
 }
 
-
-const rock = document.querySelector("#rock");
-const paper = document.querySelector("#paper");
-const scissor = document.querySelector("#scissor");
-
-rock.addEventListener("click", () => playRound("rock"));
-paper.addEventListener("click", () => playRound("paper"));
-scissor.addEventListener("click", () => playRound("scissor"));
-
-const result = document.querySelector(".result");
-const score = document.querySelector(".score");
-const message = document.querySelector(".message");
 
